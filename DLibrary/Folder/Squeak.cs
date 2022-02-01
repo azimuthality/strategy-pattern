@@ -4,16 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace DLibrary
+namespace DLibrary.Folder
 {
-    public class RubberDuck : Duck
+    public class Squeak : QuackBehavior
     {
-        public override string display()
+        public string quack()
         {
-            return "display" + this.GetType();
+            return "Пи пи пи";
         }
-        
-
     }
+    
 }

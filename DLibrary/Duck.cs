@@ -8,11 +8,31 @@ using System.Threading.Tasks;
 namespace DLibrary
 {
     public abstract class Duck 
-    {     
+    {
+        protected FlyBehavior flybehavior;
+        protected QuackBehavior quackbehavior;
         public string swim()
         {
-            return "swim" + this.GetType();
+            return "Буль буль буль";
         }      
         public abstract string display();
+        public string PerformFly()
+        {
+            return flybehavior.fly();
+        }
+
+        public string PerformQuack()
+        {
+            return quackbehavior.quack();
+        }
+
+        public void SetFlyBehavior(FlyBehavior flyable)
+        {
+            flybehavior = flyable;
+        }
+        public void SetQuackBehavior(QuackBehavior quackable)
+        {
+            quackbehavior = quackable;
+        }
     }
 }

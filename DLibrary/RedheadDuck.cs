@@ -7,20 +7,12 @@ using System.Threading.Tasks;
 
 namespace DLibrary
 {
-    public class RedheadDuck : Duck, Flyable, Quackable
+    public class RedheadDuck : Duck
     {
         public override string display()
         {
             return "display" + this.GetType();
         }
-        public string fly()
-        {
-            return "fly" + this.GetType();
-        }
-        public string quack()
-        {
-            return "quack" + this.GetType();
-        }
-
+       
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DLibrary;
+using DLibrary.Folder;
 
 
 
@@ -15,23 +16,33 @@ namespace WoundedDuck
         {
             RedheadDuck redheadDuck = new RedheadDuck();
             MallardDuck mallardDuck = new MallardDuck();
-            RubberDuck rubberDuck = new DLibrary.RubberDuck();
+            RubberDuck rubberDuck = new RubberDuck();
             DecoyDuck decoyDuck = new DecoyDuck();
 
-            Duck[] qruck = { redheadDuck, mallardDuck, rubberDuck, decoyDuck };
+            FlyBehavior flynoway = new FlyNoWay();
+            FlyBehavior flywithwings = new FlyWithWings();
 
-            foreach (Duck j in qruck)
+            QuackBehavior mutequack = new MuteQuack();
+            QuackBehavior dquack = new DQuack();
+            QuackBehavior squeak = new Squeak();
+
+            redheadDuck.SetFlyBehavior(flywithwings);
+            redheadDuck.SetQuackBehavior(dquack);
+            rubberDuck.SetFlyBehavior(flynoway);
+            rubberDuck.SetQuackBehavior(squeak);
+            decoyDuck.SetFlyBehavior(flynoway);
+            decoyDuck.SetQuackBehavior(mutequack);
+            mallardDuck.SetFlyBehavior(flywithwings);
+            mallardDuck.SetQuackBehavior(dquack);
+
+            Duck[] qruack = { redheadDuck, mallardDuck, rubberDuck, decoyDuck };
+
+            foreach (Duck j in qruack)
             {
                 Console.WriteLine(j.display());
                 Console.WriteLine(j.swim());
-                if (j is Quackable)
-                {
-                    Console.WriteLine((j as Quackable).quack());
-                }
-                if (j is Flyable)
-                {
-                    Console.WriteLine((j as Flyable).fly());
-                }
+                Console.WriteLine(j.PerformFly());
+                Console.WriteLine(j.PerformQuack());
             }
 
             Console.ReadKey();

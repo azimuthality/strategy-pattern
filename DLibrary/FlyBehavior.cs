@@ -4,16 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace DLibrary
 {
-    public class RubberDuck : Duck
+    
+   public interface FlyBehavior
     {
-        public override string display()
-        {
-            return "display" + this.GetType();
-        }
-        
-
+        string fly();
     }
 }
